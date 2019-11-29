@@ -3,6 +3,10 @@ using System;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System.Threading;
+
 
 namespace Hackathon
 {
@@ -56,6 +60,52 @@ namespace Hackathon
             if (result == EmailValidationResult.OK)
                 return true;
             return false;
+        }
+
+        // Call Messenger
+        public static void CallFacebook(string email, string password, string user_receive)
+        {
+            try
+            {
+                var driverService = ChromeDriverService.CreateDefaultService();
+                driverService.HideCommandPromptWindow = true;
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument(Application.StartupPath + "chromedriver.exe");
+                options.AddArguments("--incognito");
+                options.AddArgument(@"--start-maximized");
+                options.AddArgument(@"--disable-infobars");
+                options.AddArgument("--disable-user-media-security=true");
+                options.AddArgument("--use-fake-ui-for-media-stream=1");
+
+                var driver = new ChromeDriver(driverService, options);
+
+
+                driver.Navigate().GoToUrl("https://www.messenger.com/login.php");
+                Thread.Sleep(1000);
+                //driver.Manage().Window.Minimize();
+                IWebElement query = driver.FindElement(By.CssSelector("#email"));
+                query.SendKeys(email);
+
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                query = driver.FindElement(By.CssSelector("#pass"));
+                query.SendKeys(password);
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                Thread.Sleep(500);
+
+                query = driver.FindElement(By.CssSelector("#loginbutton"));
+                query.Click();
+                Thread.Sleep(1000);
+                driver.Navigate().GoToUrl("https://www.messenger.com/t/" + user_receive);
+                Thread.Sleep(1000);
+                query = driver.FindElement(By.XPath(".//*[@data-testid='startVoiceCall']"));
+                query.Click();
+                Thread.Sleep(5000);
+                driver.Quit();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

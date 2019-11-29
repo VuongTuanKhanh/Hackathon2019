@@ -99,13 +99,27 @@ namespace Hackathon
         // Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Check ID format
+            try
+            {
+                int.Parse(txtUsername.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid ID format !", "Warning");
+                return;
+            }
+
+            // Arguments
             string Username = txtUsername.Text;
             string Password = txtPassword.Text;
             LoginBS loginBS = new LoginBS();
             if (bool.Parse(loginBS.Login(Username, Password)))
             {
-                MessageBox.Show("True");
+                MessageBox.Show("Success");
             }
+            else
+                MessageBox.Show("Username or Password incorrect. Please try again.");
         }
 
         // Load Form
@@ -177,7 +191,7 @@ namespace Hackathon
             LoginBS loginBS = new LoginBS();
             if (bool.Parse(loginBS.Login(Username)))
             {
-                MessageBox.Show("True");
+                MessageBox.Show("Success");
             }
         }
         #endregion
