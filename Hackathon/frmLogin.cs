@@ -118,15 +118,21 @@ namespace Hackathon
             if (bool.Parse(loginBS.Login(Username, Password)))
             {
                 StopCamera();
-                _touch.CurrentCamera.Dispose();
                 this.Hide();
-                /////////////////////////////////////////////////////////////////
+
+                Thread thread = new Thread(new ThreadStart(WorkThreadFunction));
+                thread.Start();
+
                 FrmPrincipal frmPrincipal = new FrmPrincipal();
                 frmPrincipal.ShowDialog();
                 this.Close();
             }
             else
                 MessageBox.Show("Username or Password incorrect. Please try again.");
+        }
+        public void WorkThreadFunction()
+        {
+            _touch.Dispose();
         }
 
         // Load Form
