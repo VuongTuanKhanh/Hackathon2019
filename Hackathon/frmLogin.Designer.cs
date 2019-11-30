@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnSignup));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbSignin = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,9 +40,12 @@
             this.btnLoadFile = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnShowScanner = new System.Windows.Forms.Button();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,9 +56,9 @@
             this.groupBox1.Controls.Add(this.lbForgetPassword);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtUsername);
-            this.groupBox1.Location = new System.Drawing.Point(35, 47);
+            this.groupBox1.Location = new System.Drawing.Point(12, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 289);
+            this.groupBox1.Size = new System.Drawing.Size(361, 383);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Authentication";
@@ -126,9 +130,9 @@
             this.groupBox2.Controls.Add(this.btnLoadFile);
             this.groupBox2.Controls.Add(this.txtResult);
             this.groupBox2.Controls.Add(this.pictureBox);
-            this.groupBox2.Location = new System.Drawing.Point(421, 8);
+            this.groupBox2.Location = new System.Drawing.Point(379, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(610, 328);
+            this.groupBox2.Size = new System.Drawing.Size(459, 383);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Code Scanner";
@@ -136,7 +140,7 @@
             // btnLoadFile
             // 
             this.btnLoadFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadFile.Location = new System.Drawing.Point(455, 48);
+            this.btnLoadFile.Location = new System.Drawing.Point(152, 343);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(149, 31);
             this.btnLoadFile.TabIndex = 2;
@@ -147,10 +151,10 @@
             // txtResult
             // 
             this.txtResult.Enabled = false;
-            this.txtResult.Location = new System.Drawing.Point(455, 22);
+            this.txtResult.Location = new System.Drawing.Point(45, 317);
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
-            this.txtResult.Size = new System.Drawing.Size(149, 20);
+            this.txtResult.Size = new System.Drawing.Size(378, 20);
             this.txtResult.TabIndex = 1;
             this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
             // 
@@ -163,13 +167,39 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
+            // btnShowScanner
+            // 
+            this.btnShowScanner.Location = new System.Drawing.Point(269, 18);
+            this.btnShowScanner.Name = "btnShowScanner";
+            this.btnShowScanner.Size = new System.Drawing.Size(104, 23);
+            this.btnShowScanner.TabIndex = 2;
+            this.btnShowScanner.Text = "Show Scanner";
+            this.btnShowScanner.UseVisualStyleBackColor = true;
+            this.btnShowScanner.Click += new System.EventHandler(this.btnShowScanner_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(761, 2);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(41, 39);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 3;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
             // btnSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 363);
+            this.ClientSize = new System.Drawing.Size(852, 443);
+            this.Controls.Add(this.bunifuImageButton1);
+            this.Controls.Add(this.btnShowScanner);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "btnSignup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -180,6 +210,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,6 +228,8 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnLoadFile;
         private System.Windows.Forms.LinkLabel lbSignin;
+        private System.Windows.Forms.Button btnShowScanner;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }
 
