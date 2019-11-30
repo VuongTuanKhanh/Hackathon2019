@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Hackathon
 {
-    public partial class frmForgetPassword : Form
+    public partial class frmForgetPassword : MyForm
     {
         private Thread threadEmail;
 
@@ -48,6 +48,31 @@ namespace Hackathon
         {
             Attachment attachment = new Attachment(@"C:\Users\HP\Desktop\Hackathon\Logo\Google-Station-free-wifi-1280x720.jpg");
             CommonFunction.Send_Email("17110313@student.hcmute.edu.vn", Gmail, "Reset Password", "Mật khẩu mới của bạn là: " + New_Password, attachment);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void frmForgetPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDownForm(e, this);
+        }
+
+        private void frmForgetPassword_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouseMoveForm(e, this);
+        }
+
+        private void frmForgetPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseUpForm(this);
         }
     }
 }

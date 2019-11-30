@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hackathon
+namespace FormMain
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Hackathon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new Form1());
         }
     }
 }

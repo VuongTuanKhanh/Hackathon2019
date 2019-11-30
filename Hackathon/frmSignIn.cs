@@ -10,8 +10,12 @@ using System.Drawing;
 
 namespace Hackathon
 {
-    public partial class frmSignin : Form
+    public partial class frmSignin : MyForm
     {
+        private bool isShow = false;
+        private int widthForm;
+        private int heightForm;
+
         public frmSignin()
         {
             InitializeComponent();
@@ -20,6 +24,19 @@ namespace Hackathon
         // Sign In
         private void btnSingin_Click(object sender, EventArgs e)
         {
+
+            if(!isShow)
+            {
+                resizeShow();
+                pnlShow.Show();
+                isShow = true;
+            }
+            else
+            {
+                resizeClose();
+                pnlShow.Hide();
+                isShow = false;
+            }
             // Check for INT format
             try
             {
@@ -110,6 +127,16 @@ namespace Hackathon
             btnSave.Enabled = false;
         }
 
+        private void resizeShow()
+        {
+            this.Size = new Size(widthForm, heightForm + pnlShow.Size.Height);
+        }
+
+        private void resizeClose()
+        {
+            this.Size = new Size(widthForm,heightForm);
+        }
+
         // Save Image
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -133,6 +160,38 @@ namespace Hackathon
                 Barcode_Picturebox.Image.Save(sfd.FileName + "_Barcode", savetype);
                 QR_Picturebox.Image.Save(sfd.FileName + "_QR", savetype);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void frmSignin_Load(object sender, EventArgs e)
+        {
+            pnlShow.Hide();
+            widthForm = this.Size.Width;
+            heightForm = this.Size.Height;
+        }
+
+        private void frmSignin_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDownForm(e, this);
+        }
+
+        private void frmSignin_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouseMoveForm(e, this);
+        }
+
+        private void frmSignin_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseUpForm(this);
         }
     }
 }

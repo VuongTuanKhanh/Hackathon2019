@@ -74,7 +74,6 @@ C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\zxing.presentation.pdb
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\zxing.presentation.xml
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.csprojAssemblyReference.cache
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.frmForgetPassword.resources
-C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.btnSignup.resources
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.frmSignin.resources
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.Properties.Resources.resources
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.csproj.GenerateResource.cache
@@ -84,3 +83,4 @@ C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.pdb
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\WebDriver.dll
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\WebDriver.xml
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\HP\Desktop\Hackathon2019\Hackathon\obj\Debug\Hackathon.frmLogin.resources

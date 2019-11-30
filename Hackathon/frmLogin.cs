@@ -8,17 +8,14 @@ using ZXing;
 
 namespace Hackathon
 {
-    public partial class btnSignup : Form
+    public partial class frmLogin : MyForm
     {
-        private bool isShowScanner = false;
-        private int widthForm;
-        private int heightForm;
 
         #region Constructor
         public TouchlessMgr _touch;
         private Thread threadForm;
 
-        public btnSignup()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -129,9 +126,6 @@ namespace Hackathon
         // Load Form
         private void btnSignup_Load(object sender, EventArgs e)
         {
-            groupBox2.Visible = false;
-            widthForm = this.Size.Width;
-            heightForm = this.Size.Height;
             _touch = new TouchlessMgr();
             StartCamera();
         }
@@ -203,20 +197,29 @@ namespace Hackathon
         }
         #endregion
 
-        private void btnShowScanner_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            if (!isShowScanner)
-            {
-                groupBox2.Show();
-                this.Size = new Size(widthForm, heightForm);
-                isShowScanner = true;
-            }
-            else
-            {
-                isShowScanner = false;
-                this.Size = new Size(widthForm - groupBox2.Size.Width, heightForm);
-                groupBox2.Hide();
-            }
+            this.Close();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void frmLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDownForm(e, this);
+        }
+
+        private void frmLogin_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouseMoveForm(e, this);
+        }
+
+        private void frmLogin_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseUpForm(this);
         }
     }
 }
