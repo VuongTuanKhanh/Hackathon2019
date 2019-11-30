@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiFaceRec", "MultiFaceRec.csproj", "{CC813884-5D90-4044-9571-8FB7C54D9612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bing Translator", "packages\Bing Translator\Bing Translator\Bing Translator.csproj", "{C2777966-53CB-4BB9-A474-83D3D8F41F01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,14 @@ Global
 		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|Any CPU.ActiveCfg = Release|x86
 		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|x86.ActiveCfg = Release|x86
 		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|x86.Build.0 = Release|x86
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Debug|x86.Build.0 = Debug|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Release|x86.ActiveCfg = Release|Any CPU
+		{C2777966-53CB-4BB9-A474-83D3D8F41F01}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

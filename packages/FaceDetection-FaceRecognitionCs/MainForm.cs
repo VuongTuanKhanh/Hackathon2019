@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
-using Emgu.CV.CvEnum;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
@@ -12,6 +11,7 @@ using System.Speech.Synthesis;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using OpenQA.Selenium;
+using Emgu.CV.CvEnum;
 
 namespace MultiFaceRec
 {
@@ -21,9 +21,8 @@ namespace MultiFaceRec
 
         //Declararation of all variables, vectors and haarcascades
         Image<Bgr, Byte> currentFrame;
-        Emgu.CV.Capture grabber;
+        Capture grabber;
         HaarCascade face;
-        HaarCascade eye;
         MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.5d, 0.5d);
         Image<Gray, byte> result, TrainedFace = null;
         Image<Gray, byte> gray = null;
@@ -54,7 +53,7 @@ namespace MultiFaceRec
                 }
             
             }
-            catch(Exception e)
+            catch
             {
                 MessageBox.Show("Mời nhập dữ liệu gương mặt", "Data Load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -84,7 +83,7 @@ namespace MultiFaceRec
 				}
 
 			}
-			catch (Exception e)
+			catch
 			{
 				//MessageBox.Show(e.ToString());
 				MessageBox.Show("Mời nhập dữ liệu gương mặt", "Data Load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -172,7 +171,7 @@ namespace MultiFaceRec
         private void loadingx()
         {
             pbxLoading.Visible = true;
-            for(int i=0;i<5;i++)
+            for(int i=0;i<3;i++)
             {
                 Thread.Sleep(1000);
             }
@@ -194,10 +193,27 @@ namespace MultiFaceRec
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            wbView.Navigate("Facebook.com");
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTranslate_Click(object sender, EventArgs e)
+        {
+            Bing_Translator.Form1 form = new Bing_Translator.Form1();
+            form.Show();
+        }
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
             pbxLoading.Visible = false;
-		}
+            wbView.Navigate("lms.hcmute.edu.vn");
+        }
 
 		private void button1_Click(object sender, EventArgs e)
         {

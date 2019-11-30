@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMicro = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +50,10 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
+            this.wbView = new System.Windows.Forms.WebBrowser();
+            this.btnTranslate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMicro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,11 +73,12 @@
             this.textBox1.Location = new System.Drawing.Point(46, 170);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 34);
+            this.textBox1.Size = new System.Drawing.Size(148, 34);
             this.textBox1.TabIndex = 7;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnMicro);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.imageBox1);
@@ -84,6 +89,17 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Training: ";
+            // 
+            // btnMicro
+            // 
+            this.btnMicro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMicro.Image = ((System.Drawing.Image)(resources.GetObject("btnMicro.Image")));
+            this.btnMicro.Location = new System.Drawing.Point(200, 170);
+            this.btnMicro.Name = "btnMicro";
+            this.btnMicro.Size = new System.Drawing.Size(34, 35);
+            this.btnMicro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMicro.TabIndex = 35;
+            this.btnMicro.TabStop = false;
             // 
             // label1
             // 
@@ -194,9 +210,9 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(26, 476);
+            this.button1.Location = new System.Drawing.Point(12, 627);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 83);
+            this.button1.Size = new System.Drawing.Size(52, 45);
             this.button1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.button1.TabIndex = 28;
             this.button1.TabStop = false;
@@ -206,9 +222,9 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(137, 476);
+            this.button2.Location = new System.Drawing.Point(90, 627);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 83);
+            this.button2.Size = new System.Drawing.Size(52, 45);
             this.button2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.button2.TabIndex = 29;
             this.button2.TabStop = false;
@@ -218,9 +234,9 @@
             // 
             this.btnMess.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMess.Image = ((System.Drawing.Image)(resources.GetObject("btnMess.Image")));
-            this.btnMess.Location = new System.Drawing.Point(26, 678);
+            this.btnMess.Location = new System.Drawing.Point(90, 679);
             this.btnMess.Name = "btnMess";
-            this.btnMess.Size = new System.Drawing.Size(85, 83);
+            this.btnMess.Size = new System.Drawing.Size(52, 45);
             this.btnMess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMess.TabIndex = 30;
             this.btnMess.TabStop = false;
@@ -230,9 +246,9 @@
             // 
             this.btn_Gmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Gmail.Image = ((System.Drawing.Image)(resources.GetObject("btn_Gmail.Image")));
-            this.btn_Gmail.Location = new System.Drawing.Point(137, 579);
+            this.btn_Gmail.Location = new System.Drawing.Point(170, 679);
             this.btn_Gmail.Name = "btn_Gmail";
-            this.btn_Gmail.Size = new System.Drawing.Size(85, 83);
+            this.btn_Gmail.Size = new System.Drawing.Size(52, 45);
             this.btn_Gmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_Gmail.TabIndex = 31;
             this.btn_Gmail.TabStop = false;
@@ -242,9 +258,9 @@
             // 
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(26, 578);
+            this.btnSearch.Location = new System.Drawing.Point(170, 628);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(85, 83);
+            this.btnSearch.Size = new System.Drawing.Size(52, 45);
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 32;
             this.btnSearch.TabStop = false;
@@ -254,12 +270,13 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(137, 678);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 679);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(85, 83);
+            this.pictureBox3.Size = new System.Drawing.Size(52, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 33;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pbxLoading
             // 
@@ -271,12 +288,32 @@
             this.pbxLoading.TabIndex = 34;
             this.pbxLoading.TabStop = false;
             // 
+            // wbView
+            // 
+            this.wbView.Location = new System.Drawing.Point(251, 38);
+            this.wbView.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbView.Name = "wbView";
+            this.wbView.Size = new System.Drawing.Size(1109, 714);
+            this.wbView.TabIndex = 35;
+            // 
+            // btnTranslate
+            // 
+            this.btnTranslate.Location = new System.Drawing.Point(29, 548);
+            this.btnTranslate.Name = "btnTranslate";
+            this.btnTranslate.Size = new System.Drawing.Size(75, 23);
+            this.btnTranslate.TabIndex = 36;
+            this.btnTranslate.Text = "Translate";
+            this.btnTranslate.UseVisualStyleBackColor = true;
+            this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1372, 764);
+            this.Controls.Add(this.btnTranslate);
+            this.Controls.Add(this.wbView);
             this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnSearch);
@@ -302,6 +339,7 @@
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMicro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -338,6 +376,9 @@
         private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pbxLoading;
+        private System.Windows.Forms.PictureBox btnMicro;
+        private System.Windows.Forms.WebBrowser wbView;
+        private System.Windows.Forms.Button btnTranslate;
     }
 }
 

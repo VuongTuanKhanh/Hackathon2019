@@ -90,3 +90,6 @@ C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\Emgu.CV.UI.dll
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\Emgu.Util.dll
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\MultiFaceRec.pdb
 C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\MultiFaceRec.exe.config
+C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\Bing Translator.exe
+C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\Bing Translator.pdb
+C:\Users\HP\Desktop\Hackathon2019\Hackathon\bin\Debug\Bing Translator.exe.config

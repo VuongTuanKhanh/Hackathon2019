@@ -14,6 +14,8 @@ namespace MultiFaceRec
 {
 	public partial class Gmail_Form : Form
 	{
+        private string pathFile;
+
 		public Gmail_Form()
 		{
 			InitializeComponent();
@@ -24,7 +26,7 @@ namespace MultiFaceRec
 			OpenFileDialog dialog = new OpenFileDialog();
 			if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
-				txtFile.Text = dialog.FileName;
+                pathFile = dialog.FileName;
 			}
 		}
 
@@ -35,8 +37,8 @@ namespace MultiFaceRec
 			attach = null;
 			try
 			{
-				FileInfo file = new FileInfo(txtFile.Text);
-				attach = new Attachment(txtFile.Text);
+				FileInfo file = new FileInfo(pathFile);
+				attach = new Attachment(pathFile);
 			}
 			catch { }
 			GuiMail(txtTenDangNhap.Text, txtTo.Text, txtSubject.Text, txtMessage.Text);
@@ -54,9 +56,27 @@ namespace MultiFaceRec
 			SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
 			client.EnableSsl = true;
 			client.Credentials = new NetworkCredential(txtTenDangNhap.Text, txtMatKhau.Text);
-			client.Send(mess);
+            try
+            {
+                client.Send(mess);
+            }
+            catch
+            {
+                MessageBox.Show("Wrong Email or Password !");
+                return;
+            }
 
-			MessageBox.Show("Hoàn tất !");
+			MessageBox.Show("Finished !");
 		}
-	}
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+    }
 }
