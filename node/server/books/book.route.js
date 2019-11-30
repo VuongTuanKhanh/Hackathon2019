@@ -4,6 +4,7 @@ const BookMatrix = require('../models/book.matrix.schema')
 
 router.get('/', async (req, res) => {
     const books = await Book.find({})
+    books.length = 12
     res.send(books)
 })
 

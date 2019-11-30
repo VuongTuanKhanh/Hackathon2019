@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 
 const BookRoute = require('./books/book.route')
+const MusicRoute = require('./music/music.route')
 // --------------------------------------------------------------------//
 
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
@@ -29,7 +30,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../static/index.html'))
 })
 
+app.use((req, res) => console.log(req.url, req.method))
 app.use('/books', BookRoute)
+app.use('/music', MusicRoute)
 
 app.get('/python-batch', (req, res) => {
     const file = 'test.py'
