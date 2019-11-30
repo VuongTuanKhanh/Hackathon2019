@@ -4,6 +4,7 @@ const Nexmo = require('nexmo')
 const spawn = require('child_process').spawn
 const mongoose = require('mongoose')
 
+const BookRoute = require('./books/book.route')
 // --------------------------------------------------------------------//
 
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
@@ -20,6 +21,8 @@ app.use(Express.json())
 app.use(Express.urlencoded({ extended : false }))
 
 // --------------------------------------------------------------------//
+
+app.use('/books', BookRoute)
 
 app.get('/python-batch', (req, res) => {
     const file = 'test.py'
