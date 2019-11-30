@@ -3,8 +3,10 @@ const Express = require('express')
 const Nexmo = require('nexmo')
 const spawn = require('child_process').spawn
 const mongoose = require('mongoose')
+const path = require('path')
 
 const BookRoute = require('./books/book.route')
+const MusicRoute = require('./music/music.route')
 // --------------------------------------------------------------------//
 
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
@@ -19,10 +21,17 @@ const nexmo = new Nexmo({
 
 app.use(Express.json())
 app.use(Express.urlencoded({ extended : false }))
+//default static source
+app.use(Express.static(path.join(__dirname, '../static')))
 
 // --------------------------------------------------------------------//
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../static/index.html'))
+})
+
 app.use('/books', BookRoute)
+app.use('/music', MusicRoute)
 
 app.get('/python-batch', (req, res) => {
     const file = 'test.py'
