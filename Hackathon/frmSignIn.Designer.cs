@@ -36,16 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtGmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.Barcode_Picturebox = new System.Windows.Forms.PictureBox();
             this.QR_Picturebox = new System.Windows.Forms.PictureBox();
-            this.btnSave = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSignin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMini = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Barcode_Picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QR_Picturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
@@ -136,13 +135,26 @@
             // 
             // pnlShow
             // 
+            this.pnlShow.Controls.Add(this.btnSave);
             this.pnlShow.Controls.Add(this.Barcode_Picturebox);
             this.pnlShow.Controls.Add(this.QR_Picturebox);
-            this.pnlShow.Controls.Add(this.btnSave);
             this.pnlShow.Location = new System.Drawing.Point(40, 316);
             this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(467, 231);
+            this.pnlShow.Size = new System.Drawing.Size(467, 218);
             this.pnlShow.TabIndex = 20;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(189, 171);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(102, 44);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // Barcode_Picturebox
             // 
@@ -161,21 +173,6 @@
             this.QR_Picturebox.Size = new System.Drawing.Size(161, 154);
             this.QR_Picturebox.TabIndex = 4;
             this.QR_Picturebox.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageActive = null;
-            this.btnSave.Location = new System.Drawing.Point(198, 175);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(51, 46);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 18;
-            this.btnSave.TabStop = false;
-            this.btnSave.Zoom = 10;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSignin
             // 
@@ -198,7 +195,7 @@
             this.btnSignin.IconVisible = true;
             this.btnSignin.IconZoom = 90D;
             this.btnSignin.IsTab = false;
-            this.btnSignin.Location = new System.Drawing.Point(139, 252);
+            this.btnSignin.Location = new System.Drawing.Point(144, 246);
             this.btnSignin.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(134)))), ((int)(((byte)(252)))));
@@ -248,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(549, 313);
+            this.ClientSize = new System.Drawing.Size(549, 316);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.btnSignin);
             this.Controls.Add(this.label3);
@@ -270,7 +267,6 @@
             this.pnlShow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Barcode_Picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QR_Picturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
@@ -289,8 +285,8 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtUsername;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtGmail;
-        private Bunifu.Framework.UI.BunifuImageButton btnSave;
         private Bunifu.Framework.UI.BunifuFlatButton btnSignin;
         private System.Windows.Forms.Panel pnlShow;
+        private System.Windows.Forms.Button btnSave;
     }
 }

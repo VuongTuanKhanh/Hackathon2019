@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbForgetPassword = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLost = new System.Windows.Forms.Button();
             this.btnLoadFile = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -200,6 +201,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLost);
             this.groupBox2.Controls.Add(this.btnLoadFile);
             this.groupBox2.Controls.Add(this.txtResult);
             this.groupBox2.Controls.Add(this.pictureBox);
@@ -212,13 +214,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Code Scanner";
             // 
+            // btnLost
+            // 
+            this.btnLost.Location = new System.Drawing.Point(109, 373);
+            this.btnLost.Name = "btnLost";
+            this.btnLost.Size = new System.Drawing.Size(75, 23);
+            this.btnLost.TabIndex = 10;
+            this.btnLost.Text = "Lost";
+            this.btnLost.UseVisualStyleBackColor = true;
+            this.btnLost.Click += new System.EventHandler(this.btnLost_Click);
+            // 
             // btnLoadFile
             // 
             this.btnLoadFile.BackColor = System.Drawing.Color.Transparent;
             this.btnLoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadFile.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadFile.Image")));
             this.btnLoadFile.ImageActive = null;
-            this.btnLoadFile.Location = new System.Drawing.Point(220, 345);
+            this.btnLoadFile.Location = new System.Drawing.Point(201, 350);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(51, 46);
             this.btnLoadFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -324,6 +336,7 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuFlatButton btnLogin;
         private Bunifu.Framework.UI.BunifuImageButton btnLoadFile;
+        private System.Windows.Forms.Button btnLost;
     }
 }
 

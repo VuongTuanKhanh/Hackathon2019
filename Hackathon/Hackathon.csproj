@@ -141,6 +141,10 @@
       <Project>{8db57ba1-e88c-43d9-ad0e-04bfa6b11c61}</Project>
       <Name>BarcodeGenerator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\packages\FaceDetection-FaceRecognitionCs\MultiFaceRec.csproj">
+      <Project>{cc813884-5d90-4044-9571-8fb7c54d9612}</Project>
+      <Name>MultiFaceRec</Name>
+    </ProjectReference>
     <ProjectReference Include="..\packages\Scanner\BarcodeReader\BarcodeReaderApp.csproj">
       <Project>{b5099ccf-9441-40f1-944f-41ab66dc5594}</Project>
       <Name>BarcodeReaderApp</Name>

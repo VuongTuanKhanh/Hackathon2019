@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using TouchlessLib;
 using ZXing;
-
+using MultiFaceRec;
 namespace Hackathon
 {
     public partial class frmLogin : MyForm
@@ -117,7 +117,12 @@ namespace Hackathon
             LoginBS loginBS = new LoginBS();
             if (bool.Parse(loginBS.Login(Username, Password)))
             {
-                MessageBox.Show("Success");
+                this.Hide();
+                /////////////////////////////////////////////////////////////////
+                StopCamera();
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                frmPrincipal.ShowDialog();
+                this.Close();
             }
             else
                 MessageBox.Show("Username or Password incorrect. Please try again.");
@@ -155,7 +160,8 @@ namespace Hackathon
                         MessageBox.Show("File not supported.");
                         return;
                     }
-                    pictureBox.Image = new Bitmap(dlg.FileName);
+                    StopCamera();
+                    pictureBox.Image = bitmap;
                     ReadBarcode((Bitmap)pictureBox.Image);
                 }
             }
@@ -177,25 +183,6 @@ namespace Hackathon
             frmSignin.ShowDialog();
             this.Show();
         }
-        #endregion
-
-        #region Other Function
-        private void openFormForgetPassword()
-        {
-            Application.Run(new frmForgetPassword());
-        }
-
-        // Login with Scanner
-        private void txtResult_TextChanged(object sender, EventArgs e)
-        {
-            string Username = txtResult.Text;
-            LoginBS loginBS = new LoginBS();
-            if (bool.Parse(loginBS.Login(Username)))
-            {
-                MessageBox.Show("Success");
-            }
-        }
-        #endregion
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -207,6 +194,9 @@ namespace Hackathon
             this.WindowState = FormWindowState.Minimized;
         }
 
+        #endregion
+
+        #region Mouse Activities
         private void frmLogin_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDownForm(e, this);
@@ -220,6 +210,35 @@ namespace Hackathon
         private void frmLogin_MouseUp(object sender, MouseEventArgs e)
         {
             mouseUpForm(this);
+        }
+        #endregion
+
+        #region Other Function
+        private void openFormForgetPassword()
+        {
+            Application.Run(new frmForgetPassword());
+        }
+
+        // Login with Scanner
+        private void txtResult_TextChanged(object sender, EventArgs e)
+        {
+            string Username = txtResult.Text;
+            LoginBS loginBS = new LoginBS();
+            if(loginBS.Login(Username) == "True")
+            {
+                this.Hide();
+                StopCamera();
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                frmPrincipal.ShowDialog();
+                this.Close();
+            }
+
+        }
+        #endregion
+
+        private void btnLost_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

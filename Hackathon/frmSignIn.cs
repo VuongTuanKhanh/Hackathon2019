@@ -25,18 +25,7 @@ namespace Hackathon
         private void btnSingin_Click(object sender, EventArgs e)
         {
 
-            if(!isShow)
-            {
-                resizeShow();
-                pnlShow.Show();
-                isShow = true;
-            }
-            else
-            {
-                resizeClose();
-                pnlShow.Hide();
-                isShow = false;
-            }
+            
             // Check for INT format
             try
             {
@@ -124,7 +113,19 @@ namespace Hackathon
             }
 
             MessageBox.Show("Thank you for your request! Please save these image for your next Login!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnSave.Enabled = false;
+
+            if (!isShow)
+            {
+                resizeShow();
+                pnlShow.Show();
+                isShow = true;
+            }
+            else
+            {
+                resizeClose();
+                pnlShow.Hide();
+                isShow = false;
+            }
         }
 
         private void resizeShow()
@@ -138,29 +139,7 @@ namespace Hackathon
         }
 
         // Save Image
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "BMP (*.bmp)|*.bmp|GIF (*.gif)|*.gif|JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|TIFF (*.tif)|*.tif";
-            sfd.FilterIndex = 3;
-            sfd.AddExtension = true;
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                //BarcodeLib.SaveTypes savetype = BarcodeLib.SaveTypes.UNSPECIFIED;
-                ImageFormat savetype = ImageFormat.Jpeg;
-                switch (sfd.FilterIndex)
-                {
-                    case 1: /* BMP */  savetype = ImageFormat.Bmp; break;
-                    case 2: /* GIF */  savetype = ImageFormat.Gif; break;
-                    case 3: /* JPG */  savetype = ImageFormat.Jpeg; break;
-                    case 4: /* PNG */  savetype = ImageFormat.Png; break;
-                    case 5: /* TIFF */ savetype = ImageFormat.Tiff; break;
-                    default: break;
-                }
-                Barcode_Picturebox.Image.Save(sfd.FileName + "_Barcode", savetype);
-                QR_Picturebox.Image.Save(sfd.FileName + "_QR", savetype);
-            }
-        }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -192,6 +171,35 @@ namespace Hackathon
         private void frmSignin_MouseUp(object sender, MouseEventArgs e)
         {
             mouseUpForm(this);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "BMP (*.bmp)|*.bmp|GIF (*.gif)|*.gif|JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|TIFF (*.tif)|*.tif";
+            sfd.FilterIndex = 3;
+            sfd.AddExtension = true;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //BarcodeLib.SaveTypes savetype = BarcodeLib.SaveTypes.UNSPECIFIED;
+                ImageFormat savetype = ImageFormat.Jpeg;
+                switch (sfd.FilterIndex)
+                {
+                    case 1: /* BMP */  savetype = ImageFormat.Bmp; break;
+                    case 2: /* GIF */  savetype = ImageFormat.Gif; break;
+                    case 3: /* JPG */  savetype = ImageFormat.Jpeg; break;
+                    case 4: /* PNG */  savetype = ImageFormat.Png; break;
+                    case 5: /* TIFF */ savetype = ImageFormat.Tiff; break;
+                    default: break;
+                }
+                Barcode_Picturebox.Image.Save(sfd.FileName + "_Barcode", savetype);
+                QR_Picturebox.Image.Save(sfd.FileName + "_QR", savetype);
+            }
         }
     }
 }
