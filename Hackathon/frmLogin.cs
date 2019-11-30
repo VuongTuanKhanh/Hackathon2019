@@ -117,9 +117,10 @@ namespace Hackathon
             LoginBS loginBS = new LoginBS();
             if (bool.Parse(loginBS.Login(Username, Password)))
             {
+                StopCamera();
+                _touch.CurrentCamera.Dispose();
                 this.Hide();
                 /////////////////////////////////////////////////////////////////
-                StopCamera();
                 FrmPrincipal frmPrincipal = new FrmPrincipal();
                 frmPrincipal.ShowDialog();
                 this.Close();
