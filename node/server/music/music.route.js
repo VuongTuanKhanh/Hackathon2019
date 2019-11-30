@@ -31,13 +31,12 @@ router.get('/:id/recommend', async (req, res) => {
         }
     }
 
-    console.log(result)
-
     const booksNameRecommend = Object.values(result)
-    const recommends = await Music.find({
-        name: { $in: booksNameRecommend }
-    })
-    res.send(recommends)
+    const mapped = await Promise.all(booksNameRecommend.map(async name => {
+        const bookObj = await Music.findOne({ name })
+        return bookObj
+    }))
+    res.send(mapped)
 })
 
 module.exports = router
