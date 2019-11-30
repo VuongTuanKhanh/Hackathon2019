@@ -225,12 +225,6 @@ namespace MultiFaceRec
 
         }
 
-        private void btnTranslate_Click(object sender, EventArgs e)
-        {
-            Bing_Translator.Form1 form = new Bing_Translator.Form1();
-            form.Show();
-        }
-
         private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
             Sarah.SpeakAsync("Hi sir. Allow me to introduce myself, I am JAVIS, the virtual artificial intelligence. And I'm here to assist you with the variety of tasks as best as I can, 24 hours a day, 7 days a week.");
@@ -266,6 +260,29 @@ namespace MultiFaceRec
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Sarah.SpeakAsync("Accessing School Dashboard");
+            wbView.Navigate("lms.hcmute.edu.vn");
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Sarah.SpeakAsync("Accessing Online Portal");
+            wbView.Navigate("online.hcmute.edu.vn");
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Sarah.SpeakAsync("Camera is on");
+            System.Diagnostics.Process.Start("http://192.168.137.249:6677/");
         }
 
         private void tmrSpeaking_Tick(object sender, EventArgs e)

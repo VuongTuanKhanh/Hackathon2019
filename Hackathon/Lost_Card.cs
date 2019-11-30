@@ -64,7 +64,7 @@ namespace Hackathon
         {
             string Username = txtResult.Text;
             LoginBS loginBS = new LoginBS();
-            CommonFunction.Send_Email("17110313@student.hcmute.edu.vn", loginBS.Get_Gmail(Username), "Warning", "Bạn đã đánh mất thẻ sinh viên, xin vui lòng liên hệ " + txtContact.Text + " để nhận lại. Trân trọng");
+            CommonFunction.Send_Email_1("17110313@student.hcmute.edu.vn", loginBS.Get_Gmail(Username), "Warning", "Bạn đã đánh mất thẻ sinh viên, xin vui lòng liên hệ " + txtContact.Text + " để nhận lại. Trân trọng");
         }
 
         private void txtResult_TextChanged(object sender, EventArgs e)
@@ -75,6 +75,16 @@ namespace Hackathon
         private void txtContact_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

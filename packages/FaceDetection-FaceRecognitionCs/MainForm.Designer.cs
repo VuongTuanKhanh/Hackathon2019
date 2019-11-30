@@ -51,8 +51,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.wbView = new System.Windows.Forms.WebBrowser();
-            this.btnTranslate = new System.Windows.Forms.Button();
             this.tmrSpeaking = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMicro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
@@ -66,11 +69,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.button3)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(46, 170);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -212,9 +221,9 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(12, 627);
+            this.button1.Location = new System.Drawing.Point(12, 490);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 45);
+            this.button1.Size = new System.Drawing.Size(61, 50);
             this.button1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.button1.TabIndex = 28;
             this.button1.TabStop = false;
@@ -224,9 +233,9 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(90, 627);
+            this.button2.Location = new System.Drawing.Point(91, 489);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 45);
+            this.button2.Size = new System.Drawing.Size(61, 50);
             this.button2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.button2.TabIndex = 29;
             this.button2.TabStop = false;
@@ -236,9 +245,9 @@
             // 
             this.btnMess.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMess.Image = ((System.Drawing.Image)(resources.GetObject("btnMess.Image")));
-            this.btnMess.Location = new System.Drawing.Point(90, 679);
+            this.btnMess.Location = new System.Drawing.Point(93, 557);
             this.btnMess.Name = "btnMess";
-            this.btnMess.Size = new System.Drawing.Size(52, 45);
+            this.btnMess.Size = new System.Drawing.Size(61, 50);
             this.btnMess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMess.TabIndex = 30;
             this.btnMess.TabStop = false;
@@ -248,9 +257,9 @@
             // 
             this.btn_Gmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Gmail.Image = ((System.Drawing.Image)(resources.GetObject("btn_Gmail.Image")));
-            this.btn_Gmail.Location = new System.Drawing.Point(170, 679);
+            this.btn_Gmail.Location = new System.Drawing.Point(173, 558);
             this.btn_Gmail.Name = "btn_Gmail";
-            this.btn_Gmail.Size = new System.Drawing.Size(52, 45);
+            this.btn_Gmail.Size = new System.Drawing.Size(61, 50);
             this.btn_Gmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_Gmail.TabIndex = 31;
             this.btn_Gmail.TabStop = false;
@@ -260,9 +269,9 @@
             // 
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(170, 628);
+            this.btnSearch.Location = new System.Drawing.Point(171, 490);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(52, 45);
+            this.btnSearch.Size = new System.Drawing.Size(61, 50);
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 32;
             this.btnSearch.TabStop = false;
@@ -272,9 +281,9 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 679);
+            this.pictureBox3.Location = new System.Drawing.Point(14, 558);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 45);
+            this.pictureBox3.Size = new System.Drawing.Size(61, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 33;
             this.pictureBox3.TabStop = false;
@@ -298,19 +307,57 @@
             this.wbView.Size = new System.Drawing.Size(1109, 714);
             this.wbView.TabIndex = 35;
             // 
-            // btnTranslate
-            // 
-            this.btnTranslate.Location = new System.Drawing.Point(29, 548);
-            this.btnTranslate.Name = "btnTranslate";
-            this.btnTranslate.Size = new System.Drawing.Size(75, 23);
-            this.btnTranslate.TabIndex = 36;
-            this.btnTranslate.Text = "Translate";
-            this.btnTranslate.UseVisualStyleBackColor = true;
-            this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
-            // 
             // tmrSpeaking
             // 
             this.tmrSpeaking.Interval = 1000;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(13, 632);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 36;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(92, 632);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 37;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(172, 632);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 38;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(12, 702);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(61, 50);
+            this.button3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.button3.TabIndex = 40;
+            this.button3.TabStop = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FrmPrincipal
             // 
@@ -318,7 +365,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1372, 764);
-            this.Controls.Add(this.btnTranslate);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.wbView);
             this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.pictureBox3);
@@ -357,6 +407,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.button3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,8 +438,11 @@
         private System.Windows.Forms.PictureBox pbxLoading;
         private System.Windows.Forms.PictureBox btnMicro;
         private System.Windows.Forms.WebBrowser wbView;
-        private System.Windows.Forms.Button btnTranslate;
         private System.Windows.Forms.Timer tmrSpeaking;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox button3;
     }
 }
 

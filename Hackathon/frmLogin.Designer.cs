@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,23 +39,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbForgetPassword = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLost = new System.Windows.Forms.Button();
+            this.btnLoadFile = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtResult = new System.Windows.Forms.TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.btnMini = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnLoadFile = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnLost = new Bunifu.Framework.UI.BunifuImageButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLost)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLost);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtUsername);
@@ -71,6 +73,42 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Authentication";
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Activecolor = System.Drawing.Color.BlueViolet;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(134)))), ((int)(((byte)(252)))));
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogin.BorderRadius = 7;
+            this.btnLogin.ButtonText = "Login";
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLogin.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLogin.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnLogin.Iconimage")));
+            this.btnLogin.Iconimage_right = null;
+            this.btnLogin.Iconimage_right_Selected = null;
+            this.btnLogin.Iconimage_Selected = null;
+            this.btnLogin.IconMarginLeft = 0;
+            this.btnLogin.IconMarginRight = 0;
+            this.btnLogin.IconRightVisible = true;
+            this.btnLogin.IconRightZoom = 0D;
+            this.btnLogin.IconVisible = true;
+            this.btnLogin.IconZoom = 90D;
+            this.btnLogin.IsTab = false;
+            this.btnLogin.Location = new System.Drawing.Point(53, 216);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(134)))), ((int)(((byte)(252)))));
+            this.btnLogin.OnHovercolor = System.Drawing.Color.BlueViolet;
+            this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLogin.selected = false;
+            this.btnLogin.Size = new System.Drawing.Size(255, 60);
+            this.btnLogin.TabIndex = 9;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.Textcolor = System.Drawing.Color.White;
+            this.btnLogin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -133,7 +171,7 @@
             this.lbSignin.AutoSize = true;
             this.lbSignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSignin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lbSignin.Location = new System.Drawing.Point(243, 341);
+            this.lbSignin.Location = new System.Drawing.Point(243, 317);
             this.lbSignin.Name = "lbSignin";
             this.lbSignin.Size = new System.Drawing.Size(65, 22);
             this.lbSignin.TabIndex = 8;
@@ -145,7 +183,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 343);
+            this.label3.Location = new System.Drawing.Point(49, 319);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(177, 20);
             this.label3.TabIndex = 7;
@@ -165,7 +203,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnLost);
             this.groupBox2.Controls.Add(this.btnLoadFile);
             this.groupBox2.Controls.Add(this.txtResult);
             this.groupBox2.Controls.Add(this.pictureBox);
@@ -178,16 +215,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Code Scanner";
             // 
-            // btnLost
+            // btnLoadFile
             // 
-            this.btnLost.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLost.Location = new System.Drawing.Point(109, 360);
-            this.btnLost.Name = "btnLost";
-            this.btnLost.Size = new System.Drawing.Size(75, 23);
-            this.btnLost.TabIndex = 10;
-            this.btnLost.Text = "Lost";
-            this.btnLost.UseVisualStyleBackColor = true;
-            this.btnLost.Click += new System.EventHandler(this.btnLost_Click);
+            this.btnLoadFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadFile.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadFile.Image")));
+            this.btnLoadFile.ImageActive = null;
+            this.btnLoadFile.Location = new System.Drawing.Point(201, 350);
+            this.btnLoadFile.Name = "btnLoadFile";
+            this.btnLoadFile.Size = new System.Drawing.Size(51, 46);
+            this.btnLoadFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLoadFile.TabIndex = 5;
+            this.btnLoadFile.TabStop = false;
+            this.btnLoadFile.Zoom = 10;
+            this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
             // txtResult
             // 
@@ -198,6 +239,16 @@
             this.txtResult.Size = new System.Drawing.Size(378, 22);
             this.txtResult.TabIndex = 1;
             this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(10, 22);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(439, 289);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // btnMini
             // 
@@ -229,66 +280,20 @@
             this.btnClose.Zoom = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnLoadFile
+            // btnLost
             // 
-            this.btnLoadFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadFile.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadFile.Image")));
-            this.btnLoadFile.ImageActive = null;
-            this.btnLoadFile.Location = new System.Drawing.Point(201, 350);
-            this.btnLoadFile.Name = "btnLoadFile";
-            this.btnLoadFile.Size = new System.Drawing.Size(51, 46);
-            this.btnLoadFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLoadFile.TabIndex = 5;
-            this.btnLoadFile.TabStop = false;
-            this.btnLoadFile.Zoom = 10;
-            this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(10, 22);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(439, 289);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Activecolor = System.Drawing.Color.BlueViolet;
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(134)))), ((int)(((byte)(252)))));
-            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogin.BorderRadius = 7;
-            this.btnLogin.ButtonText = "Login";
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.DisabledColor = System.Drawing.Color.Gray;
-            this.btnLogin.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnLogin.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnLogin.Iconimage")));
-            this.btnLogin.Iconimage_right = null;
-            this.btnLogin.Iconimage_right_Selected = null;
-            this.btnLogin.Iconimage_Selected = null;
-            this.btnLogin.IconMarginLeft = 0;
-            this.btnLogin.IconMarginRight = 0;
-            this.btnLogin.IconRightVisible = true;
-            this.btnLogin.IconRightZoom = 0D;
-            this.btnLogin.IconVisible = true;
-            this.btnLogin.IconZoom = 90D;
-            this.btnLogin.IsTab = false;
-            this.btnLogin.Location = new System.Drawing.Point(53, 216);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(134)))), ((int)(((byte)(252)))));
-            this.btnLogin.OnHovercolor = System.Drawing.Color.BlueViolet;
-            this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnLogin.selected = false;
-            this.btnLogin.Size = new System.Drawing.Size(255, 60);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLogin.Textcolor = System.Drawing.Color.White;
-            this.btnLogin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLost.BackColor = System.Drawing.Color.Transparent;
+            this.btnLost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLost.Image = ((System.Drawing.Image)(resources.GetObject("btnLost.Image")));
+            this.btnLost.ImageActive = null;
+            this.btnLost.Location = new System.Drawing.Point(1, 361);
+            this.btnLost.Name = "btnLost";
+            this.btnLost.Size = new System.Drawing.Size(51, 46);
+            this.btnLost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLost.TabIndex = 11;
+            this.btnLost.TabStop = false;
+            this.btnLost.Zoom = 10;
+            this.btnLost.Click += new System.EventHandler(this.btnLost_Click);
             // 
             // frmLogin
             // 
@@ -313,10 +318,11 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLost)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,7 +344,7 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuFlatButton btnLogin;
         private Bunifu.Framework.UI.BunifuImageButton btnLoadFile;
-        private System.Windows.Forms.Button btnLost;
+        private Bunifu.Framework.UI.BunifuImageButton btnLost;
     }
 }
 

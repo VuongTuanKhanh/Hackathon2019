@@ -33,6 +33,27 @@ namespace Hackathon
             }
         }
 
+        public static void Send_Email_1(string from, string to, string subject, string message, Attachment file = null)
+        {
+            MailMessage mess = new MailMessage(from, to, subject, message);
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            client.EnableSsl = true;
+            client.Credentials = new NetworkCredential("17110313@student.hcmute.edu.vn", "k16111999");
+            if (file != null)
+            {
+                mess.Attachments.Add(file);
+            }
+            try
+            {
+                client.Send(mess);
+                MessageBox.Show("Success !");
+            }
+            catch
+            {
+                MessageBox.Show("Unable to connect");
+            }
+        }
+
         // Get the current time
         public static int getIdOnTime()
         {
