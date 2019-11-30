@@ -52,6 +52,7 @@
             this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.wbView = new System.Windows.Forms.WebBrowser();
             this.btnTranslate = new System.Windows.Forms.Button();
+            this.tmrSpeaking = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMicro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
@@ -142,6 +143,7 @@
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 16;
             this.label4.Text = "Nobody";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -306,6 +308,10 @@
             this.btnTranslate.UseVisualStyleBackColor = true;
             this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
             // 
+            // tmrSpeaking
+            // 
+            this.tmrSpeaking.Interval = 1000;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +385,7 @@
         private System.Windows.Forms.PictureBox btnMicro;
         private System.Windows.Forms.WebBrowser wbView;
         private System.Windows.Forms.Button btnTranslate;
+        private System.Windows.Forms.Timer tmrSpeaking;
     }
 }
 

@@ -37,14 +37,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbxVN = new System.Windows.Forms.PictureBox();
             this.pbxENG = new System.Windows.Forms.PictureBox();
-            this.btnSwap = new System.Windows.Forms.PictureBox();
             this.btnSpeech = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxVN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxENG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSwap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSpeech)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,18 +128,6 @@
             this.pbxENG.TabIndex = 9;
             this.pbxENG.TabStop = false;
             // 
-            // btnSwap
-            // 
-            this.btnSwap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSwap.Image = ((System.Drawing.Image)(resources.GetObject("btnSwap.Image")));
-            this.btnSwap.Location = new System.Drawing.Point(304, 75);
-            this.btnSwap.Name = "btnSwap";
-            this.btnSwap.Size = new System.Drawing.Size(52, 36);
-            this.btnSwap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSwap.TabIndex = 10;
-            this.btnSwap.TabStop = false;
-            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
-            // 
             // btnSpeech
             // 
             this.btnSpeech.Image = ((System.Drawing.Image)(resources.GetObject("btnSpeech.Image")));
@@ -159,7 +145,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 308);
             this.Controls.Add(this.btnSpeech);
-            this.Controls.Add(this.btnSwap);
             this.Controls.Add(this.pbxENG);
             this.Controls.Add(this.pbxVN);
             this.Controls.Add(this.pictureBox3);
@@ -178,7 +163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxVN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxENG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSwap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSpeech)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,7 +179,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pbxVN;
         private System.Windows.Forms.PictureBox pbxENG;
-        private System.Windows.Forms.PictureBox btnSwap;
         private System.Windows.Forms.PictureBox btnSpeech;
     }
 }

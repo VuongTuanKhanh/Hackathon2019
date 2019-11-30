@@ -30,7 +30,6 @@ C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\bin\WebDriver.xml
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.Gmail_Form.resources
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
-C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.Search.resources
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.csproj.GenerateResource.cache
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.csproj.CopyComplete
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.exe

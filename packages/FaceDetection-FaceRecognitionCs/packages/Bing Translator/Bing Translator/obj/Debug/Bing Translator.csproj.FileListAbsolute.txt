@@ -16,3 +16,12 @@ C:\Users\HP\Desktop\Bing Translator\Bing Translator\obj\Debug\Bing_Translator.Pr
 C:\Users\HP\Desktop\Bing Translator\Bing Translator\obj\Debug\Bing Translator.csproj.GenerateResource.cache
 C:\Users\HP\Desktop\Bing Translator\Bing Translator\obj\Debug\Bing Translator.exe
 C:\Users\HP\Desktop\Bing Translator\Bing Translator\obj\Debug\Bing Translator.pdb
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\bin\Debug\Bing Translator.exe.config
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\bin\Debug\Bing Translator.exe
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\bin\Debug\Bing Translator.pdb
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\obj\Debug\Bing Translator.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\obj\Debug\Bing_Translator.Form1.resources
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\obj\Debug\Bing_Translator.Properties.Resources.resources
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\obj\Debug\Bing Translator.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\obj\Debug\Bing Translator.exe
+C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\packages\Bing Translator\Bing Translator\obj\Debug\Bing Translator.pdb

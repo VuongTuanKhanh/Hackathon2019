@@ -245,6 +245,12 @@ namespace Hackathon
 
         private void btnLost_Click(object sender, EventArgs e)
         {
+            Lost_Card lost_Card = new Lost_Card();
+            lost_Card.ShowDialog();
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
 
         }
     }

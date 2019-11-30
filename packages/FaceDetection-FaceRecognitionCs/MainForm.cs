@@ -5,9 +5,8 @@ using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using System.IO;
-using System.Net;
-using System.Net.Mail;
 using System.Speech.Synthesis;
+using System.Speech.Recognition;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using OpenQA.Selenium;
@@ -17,6 +16,12 @@ namespace MultiFaceRec
 {
     public partial class FrmPrincipal : Form
     {
+        #region Variables
+        SpeechRecognitionEngine _recognizer = new SpeechRecognitionEngine();
+        SpeechSynthesizer Sarah = new SpeechSynthesizer();
+        SpeechRecognitionEngine startlistening = new SpeechRecognitionEngine();
+        int RecTimeOut = 0;
+
         Thread threadMessger;
 
         //Declararation of all variables, vectors and haarcascades
@@ -30,7 +35,7 @@ namespace MultiFaceRec
         List<string> labels= new List<string>();
         List<string> NamePersons = new List<string>();        int ContTrain, NumLabels, t;
         string name, names = null;
-
+        #endregion
 
         public FrmPrincipal()
         {
@@ -91,22 +96,37 @@ namespace MultiFaceRec
 
 		}
 
+        private void Default_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            int ranNum;
+            string speech = e.Result.Text;
+            if (speech == "Hello") Sarah.SpeakAsync("JAVIS is here sir");
+            if (speech == "How are you") Sarah.SpeakAsync("I'm working normally");
+            if (speech == "What time is it") Sarah.SpeakAsync(DateTime.Now.ToString("h mm tt"));
+            if (speech == "Good bye JAVIS")
+            {
+                Sarah.SpeakAsync("Good bye sir, good day");
+                Thread.Sleep(1000);
+                Environment.Exit(1);
+            }
+        }
 
-		private void progressBar1_Click(object sender, EventArgs e)
+        private void progressBar1_Click(object sender, EventArgs e)
 		{
 
 		}
 
 		private void btn_Gmail_Click(object sender, EventArgs e)
 		{
-			Gmail_Form Form = new Gmail_Form();
+            Sarah.SpeakAsync("Gmail is now online");
+            Gmail_Form Form = new Gmail_Form();
 			Form.ShowDialog();
 		}
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Search search = new Search();
-            search.Show();
+            Sarah.SpeakAsync("Accessing Google");
+            wbView.Navigate("google.com");
         }
 
         public static void CallFacebook(string email, string password, string user_receive)
@@ -156,6 +176,7 @@ namespace MultiFaceRec
 
         private void btnMess_Click(object sender, EventArgs e)
         {
+            Sarah.SpeakAsync("Calling Admin");
             Loading();
             threadMessger = new Thread(openMessager);
             threadMessger.SetApartmentState(ApartmentState.STA);
@@ -195,6 +216,7 @@ namespace MultiFaceRec
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            Sarah.SpeakAsync("Accessing Facebook");
             wbView.Navigate("Facebook.com");
         }
 
@@ -211,11 +233,55 @@ namespace MultiFaceRec
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
+            Sarah.SpeakAsync("Hi sir. Allow me to introduce myself, I am JAVIS, the virtual artificial intelligence. And I'm here to assist you with the variety of tasks as best as I can, 24 hours a day, 7 days a week.");
+            _recognizer.SetInputToDefaultAudioDevice();
+            _recognizer.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands.txt")))));
+            _recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(Default_SpeechRecognized);
+            _recognizer.SpeechDetected += new EventHandler<SpeechDetectedEventArgs>(_recognizer_SpeechRecognized);
+            _recognizer.RecognizeAsync(RecognizeMode.Multiple);
+
+            startlistening.SetInputToDefaultAudioDevice();
+            startlistening.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands.txt")))));
+            startlistening.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(startlistening_SpeechRecognized);
             pbxLoading.Visible = false;
             wbView.Navigate("lms.hcmute.edu.vn");
         }
 
-		private void button1_Click(object sender, EventArgs e)
+        private void _recognizer_SpeechRecognized(object sender, SpeechDetectedEventArgs e)
+        {
+            RecTimeOut = 0;
+        }
+
+        private void startlistening_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            string speech = e.Result.Text;
+            if (speech == "Hi")
+            {
+                startlistening.RecognizeAsyncCancel();
+                Sarah.SpeakAsync("Mother fucker, I'm here");
+                _recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmrSpeaking_Tick(object sender, EventArgs e)
+        {
+            if (RecTimeOut == 10)
+            {
+                _recognizer.RecognizeAsyncCancel();
+            }
+            else if (RecTimeOut == 11)
+            {
+                tmrSpeaking.Stop();
+                startlistening.RecognizeAsync(RecognizeMode.Multiple);
+                RecTimeOut = 0;
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
         {
             //Initialize the capture device
             grabber = new Emgu.CV.Capture();
@@ -223,8 +289,8 @@ namespace MultiFaceRec
             //Initialize the FrameGraber event
             Application.Idle += new EventHandler(FrameGrabber);
             button1.Enabled = false;
+            Sarah.SpeakAsync("Webcam is activated");
         }
-
 
         private void button2_Click(object sender, System.EventArgs e)
         {
@@ -270,15 +336,13 @@ namespace MultiFaceRec
                     File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", labels.ToArray()[i - 1] + "%");
                 }
 
-                MessageBox.Show(textBox1.Text + "Thêm dữ liệu thành công !", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Sarah.SpeakAsync("Welcome " + textBox1.Text);
             }
             catch
             {
-                MessageBox.Show("Lưu thông tin thất bại", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Sarah.SpeakAsync("Sorry, Your face has not been determined");
             }
         }
-
-
 		void FrameGrabber(object sender, EventArgs e)
 		{
 			label3.Text = "0";

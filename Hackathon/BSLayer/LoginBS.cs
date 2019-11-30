@@ -21,5 +21,11 @@ namespace Hackathon.BSLayer
             string sqlString = "SELECT [dbo].[Login]('" + Username + "','" + Password + "')";
             return dBMain.ExecuteScalar(sqlString, CommandType.Text);
         }
+
+        public string Get_Gmail(string Username)
+        {
+            string sqlString = "SELECT Gmail from Account Where Username = " + Username;
+            return dBMain.ExecuteScalar(sqlString, CommandType.Text);
+        }
     }
 }
