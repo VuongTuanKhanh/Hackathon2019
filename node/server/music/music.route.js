@@ -7,16 +7,6 @@ router.get('/', async (req, res) => {
     res.send(music)
 })
 
-router.get('/post', async (req, res) => {
-    const music = new Music({
-        name: 'ds',
-        Image: 'asjdh',
-        Link: 'asjdh'
-    })
-    await music.save()
-    res.send(music)
-})
-
 router.get('/:id', async (req, res) => {
     const book = await Music.findById(req.params.id)
     res.send(book)
@@ -25,17 +15,29 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/recommend', async (req, res) => {
     const book = await Music.findById(req.params.id)
 
-    for (let i = 1; i < 11; i++) {
-        const matrix = await MusicMatrix.findOne({ [i]: book.name })
-        if (matrix[1]) {
-            const booksNameRecommend = Object.values(matrix.toObject())
-            const recommends = await Music.find({
-                name: { $in: booksNameRecommend }
-            })
-            console.log(recommends)
-            res.send(recommends)
+    const matrix = await MusicMatrix.find({})
+
+    let result = {}
+    let count = 0
+    let limit = Math.floor(Math.random(5) * 10)
+
+    for(let i = 0; i < matrix.length; i++) {
+        if(Object.values(matrix[i].toObject()).includes(book.name) && count == limit) {
+            result = matrix[i].toObject()
+            break
+        }
+        if(Object.values(matrix[i].toObject()).includes(book.name)) {
+            count++
         }
     }
+
+    console.log(result)
+
+    const booksNameRecommend = Object.values(result)
+    const recommends = await Music.find({
+        name: { $in: booksNameRecommend }
+    })
+    res.send(recommends)
 })
 
 module.exports = router

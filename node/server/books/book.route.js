@@ -16,16 +16,28 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/recommend', async (req, res) => {
     const book = await Book.findOne({ book_id: req.params.id })
 
-    for (let i = 1; i < 21; i++) {
-        const matrix = await BookMatrix.findOne({ [i]: book.name })
-        if (matrix[1]) {
-            const booksNameRecommend = Object.values(matrix.toObject())
-            const recommends = await Book.find({
-                title: { $in: booksNameRecommend }
-            })
-            res.send(recommends)
+    const matrix = await BookMatrix.find({})
+
+    let result = {}
+    let count = 0
+    let limit = Math.floor(Math.random() * 10)
+
+    for(let i = 0; i < matrix.length; i++) {
+        if(Object.values(matrix[i].toObject()).includes(book.title) && count == limit) {
+            result = matrix[i].toObject()
+            break
+        }
+        if(Object.values(matrix[i].toObject()).includes(book.title)) {
+            count++
         }
     }
+    console.log(result)
+
+    const booksNameRecommend = Object.values(result)
+    const recommends = await Book.find({
+        title: { $in: booksNameRecommend }
+    })
+    res.send(recommends)
 })
 
 module.exports = router

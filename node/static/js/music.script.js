@@ -2,7 +2,8 @@ function LatestMusic(music) {
     document.cookie = `lastIdMusic=${music._id}`
 }
 
-async function getMusic() {
+document.addEventListener("DOMContentLoaded", async function(event) {
+
     const getCookie = (name) => {
         return document.cookie.split('; ').reduce((r, v) => {
             const parts = v.split('=')
@@ -10,7 +11,6 @@ async function getMusic() {
         }, '')
     }
     const lastId = getCookie('lastIdMusic')
-
     let json = {}
 
     if(lastId) {
@@ -36,4 +36,7 @@ async function getMusic() {
         document.getElementsByClassName("primary-image")[i].style.height = "229px"
         document.getElementsByClassName("product-name")[i].addEventListener("click", LatestMusic(json[i]))
     }
+})
+
+async function getMusic() {
 }

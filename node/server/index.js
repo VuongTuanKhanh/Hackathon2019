@@ -30,7 +30,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../static/index.html'))
 })
 
-app.use((req, res) => console.log(req.url, req.method))
 app.use('/books', BookRoute)
 app.use('/music', MusicRoute)
 

@@ -19,15 +19,15 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 
     let json = {}
 
-    console.log(lastId, json)
     if(lastId) {
         const res1 = await fetch(`http://localhost:3000/books/${lastId}/recommend`)
         json = await res1.json()
     } else {
         const res = await fetch('http://localhost:3000/books')
         json = await res.json()
-        console.log('book', json)
     }
+
+    console.log('book', json)
 
     for (let i = 0; i < document.getElementsByClassName("product-name").length; i++) {
         document.getElementsByClassName("product-name")[i].childNodes[0].textContent = json[i].title;

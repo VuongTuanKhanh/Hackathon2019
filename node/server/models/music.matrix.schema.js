@@ -14,6 +14,6 @@ const MusicMatrixSchema = new Schema({
     10: String
 })
 
-const MusicMatrix = mongoose.model('music_matrix', MusicMatrixSchema, 'music_recommend')
+const MusicMatrix = mongoose.model('music_matrix', MusicMatrixSchema, 'music_matrix')
 
 module.exports = MusicMatrix
