@@ -68,3 +68,16 @@ C:\Users\Tran Long\Desktop\FaceDetection-FaceRecognitionCs (1)\FaceDetection-Fac
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\bin\Bing Translator.exe
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\bin\Bing Translator.pdb
 C:\Users\HP\Desktop\FaceDetection-FaceRecognitionCs\bin\Bing Translator.exe.config
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\bin\MultiFaceRec.exe.config
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\bin\MultiFaceRec.exe
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\bin\MultiFaceRec.pdb
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\bin\WebDriver.dll
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\bin\WebDriver.xml
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.Gmail_Form.resources
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.csproj.CopyComplete
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\HP\Desktop\Hackathon\packages\FaceDetection-FaceRecognitionCs\obj\x86\Debug\MultiFaceRec.pdb

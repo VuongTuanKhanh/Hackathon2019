@@ -201,7 +201,7 @@ namespace MultiFaceRec
 
         private void openMessager()
         {
-            CallFacebook("khanhvuongtuan37@gmail.com", "Khanhincredium123456789", "chapter.nguyen.3");
+            CallFacebook("", "", "");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -283,7 +283,7 @@ namespace MultiFaceRec
         private void button3_Click(object sender, EventArgs e)
         {
             Sarah.SpeakAsync("Camera is on");
-            System.Diagnostics.Process.Start(@"http://192.168.43.139:6677/");
+            System.Diagnostics.Process.Start(@"http://192.168.1.10:4747/video");
         }
 
         private void tmrSpeaking_Tick(object sender, EventArgs e)
