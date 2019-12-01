@@ -69,7 +69,7 @@ namespace Hackathon
         public static bool Check_Gmail(string Gmail)
         {
             EmailValidator emailValidator = new EmailValidator();
-            EmailValidationResult result;
+            EmailValidationResult result = EmailValidationResult.OK;
 
             if (!emailValidator.Validate(Gmail, out result))
             {

@@ -191,7 +191,7 @@ namespace MultiFaceRec
 
         private void loadingx()
         {
-            pbxLoading.Visible = true;
+      //      pbxLoading.Visible = true;
             for(int i=0;i<3;i++)
             {
                 Thread.Sleep(1000);
@@ -283,7 +283,7 @@ namespace MultiFaceRec
         private void button3_Click(object sender, EventArgs e)
         {
             Sarah.SpeakAsync("Camera is on");
-            System.Diagnostics.Process.Start("http://192.168.137.249:6677/");
+            System.Diagnostics.Process.Start(@"http://192.168.43.139:6677/");
         }
 
         private void tmrSpeaking_Tick(object sender, EventArgs e)

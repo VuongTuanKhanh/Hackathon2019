@@ -45,9 +45,8 @@ namespace Hackathon
             }
         }
         private void send_Email()
-        {
-            Attachment attachment = new Attachment(@"C:\Users\HP\Desktop\Hackathon\Logo\Google-Station-free-wifi-1280x720.jpg");
-            CommonFunction.Send_Email("17110313@student.hcmute.edu.vn", Gmail, "Reset Password", "Mật khẩu mới của bạn là: " + New_Password, attachment);
+        {            
+            CommonFunction.Send_Email("17110313@student.hcmute.edu.vn", Gmail, "Reset Password", "Mật khẩu mới của bạn là: " + New_Password);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

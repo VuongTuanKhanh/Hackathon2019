@@ -24,8 +24,6 @@ namespace Hackathon
         // Sign In
         private void btnSingin_Click(object sender, EventArgs e)
         {
-
-            
             // Check for INT format
             try
             {
@@ -42,12 +40,12 @@ namespace Hackathon
             string Password = txtPassword.Text;
             string Gmail = txtGmail.Text;
 
-            // Check for valid Gmail
-            if (!CommonFunction.Check_Gmail(Gmail))
-            {
-                MessageBox.Show("Invalid Gmail", "Warning");
-                return;
-            }
+            //// Check for valid Gmail
+            //if (!CommonFunction.Check_Gmail(Gmail))
+            //{
+            //    MessageBox.Show("Invalid Gmail", "Warning");
+            //    return;
+            //}
 
             // New Instance
             RegisterBS registerBS = new RegisterBS();
