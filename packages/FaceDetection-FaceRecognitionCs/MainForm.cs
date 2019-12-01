@@ -276,7 +276,8 @@ namespace MultiFaceRec
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-
+            Sarah.SpeakAsync("Accessing Google Free Station");
+            System.Diagnostics.Process.Start("http://localhost:3000/");
         }
 
         private void button3_Click(object sender, EventArgs e)

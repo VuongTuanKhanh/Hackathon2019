@@ -231,13 +231,20 @@ namespace Hackathon
         {
             string Username = txtResult.Text;
             LoginBS loginBS = new LoginBS();
-            if(loginBS.Login(Username) == "True")
+            try
             {
-                this.Hide();
-                StopCamera();
-                FrmPrincipal frmPrincipal = new FrmPrincipal();
-                frmPrincipal.ShowDialog();
-                this.Close();
+                if (loginBS.Login(Username) == "True")
+                {
+                    this.Hide();
+                    StopCamera();
+                    FrmPrincipal frmPrincipal = new FrmPrincipal();
+                    frmPrincipal.ShowDialog();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                return;
             }
 
         }
